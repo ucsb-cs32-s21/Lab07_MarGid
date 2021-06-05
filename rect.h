@@ -38,6 +38,10 @@ class Rect : public shape {
 	void setLCorner(vec2 inLCor) { upperL = inLCor; }
 	void setRCorner(vec2 inRCor) {lowerR = inRCor;}
 
+	void validate(){
+		
+	}
+
   private:
 	vec2 upperL;
 	vec2 lowerR;

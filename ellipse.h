@@ -39,6 +39,7 @@ class ellipse : public shape {
 		out << "an ellipse\n";
 		return out;
 	}*/
+	void validate();
 
 
 

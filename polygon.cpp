@@ -151,3 +151,8 @@ bool Polygon::concave() {
 	return concave;
 }
 
+void Polygon::validate(){
+
+
+	
+}

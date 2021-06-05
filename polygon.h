@@ -43,6 +43,8 @@ class Polygon : public shape {
 	double getMaxX();
 	double getMaxY();
 
+	void validate();
+
   private:
 	std::vector<vec2> theVerts; //keep the vertices local to polygon
 };
