@@ -1,4 +1,6 @@
-/* ZJW simple C++ code to write out a PPM file representing an ellipse(s) */
+//Zack Marks and Anand Giduthuri
+//CS32 S21		Prof. Wood
+//Lab07
 
 #include <iostream>
 #include <fstream>

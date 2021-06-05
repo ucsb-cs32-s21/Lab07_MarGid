@@ -1,3 +1,7 @@
+//Zack Marks and Anand Giduthuri
+//CS32 S21		Prof. Wood
+//Lab07
+
 #ifndef ELLIPSE_H
 #define ELLIPSE_H
 #include <iostream>

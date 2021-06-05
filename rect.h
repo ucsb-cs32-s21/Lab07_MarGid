@@ -1,3 +1,7 @@
+//Zack Marks and Anand Giduthuri
+//CS32 S21		Prof. Wood
+//Lab07
+
 #ifndef RECT_H
 #define RECT_H
 

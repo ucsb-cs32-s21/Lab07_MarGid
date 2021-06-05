@@ -1,4 +1,7 @@
-/* ZJW simple C++ code for lab08 - full tests  NOT FULL CODE!!! */
+//Zack Marks and Anand Giduthuri
+//CS32 S21		Prof. Wood
+//Lab07
+
 
 #include <iostream>
 #include <fstream>
@@ -109,7 +112,7 @@ int main(int argc, char *argv[]) {
 
 	sizeX = stoi(argv[1]);
 	sizeY = stoi(argv[2]);
-	image theImage(sizeX, sizeY, background);
+	image<color> theImage(sizeX, sizeY, background);
 
 	for (int i=0; i < 1; i++) {
 		//code to write the files

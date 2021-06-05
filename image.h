@@ -1,3 +1,7 @@
+//Zack Marks and Anand Giduthuri
+//CS32 S21		Prof. Wood
+//Lab07
+
 #ifndef IMAGE_H
 #define IMAGE_H
 
@@ -44,12 +48,19 @@ void image<T>::fullWriteOut(ostream& out) {
 		writeNewLine(out);
 	}
 }
+//templated version
+template<typename T>
+void image<T>::writePixel(ostream& out, int x, int y, T cOut) const{
+	out << "";
+}
+
 
 //color version
 template<>
 void image<color>::writePixel(ostream& out, int x, int y, color cOut) const{
- 	out << static_cast<int>(clamp(cOut.r(), 0.0, 255)) << endl;
-}
+ 	out << static_cast<int>(clamp(cOut.r(), 0.0, 255)) << " "
+ 		<< static_cast<int>(clamp(cOut.g(), 0.0, 255)) << " "
+ 		<< static_cast<int>(clamp(cOut.b(), 0.0, 255)) << endl;}
 
 //ascii version 
 template<>
@@ -60,9 +71,7 @@ void image<char>::writePixel(ostream& out, int x, int y, char cOut) const{
 //greyscale / int version
 template<>
 void image<int>::writePixel(ostream& out, int x, int y, int cOut) const{
- 	out << static_cast<int>(clamp(cOut, 0.0, 255)) << " "
- 		<< static_cast<int>(clamp(cOut, 0.0, 255)) << " "
- 		<< static_cast<int>(clamp(cOut, 0.0, 255)) << endl;
+ 	out << static_cast<int>(clamp(cOut, 0.0, 255)) << endl;
 }
 
 //black and white / bool version 
@@ -102,7 +111,9 @@ void image<T>::writePixel(ostream& out, int x, int y, T cOut) const {
 template <typename T>
 void image<T>::writeNewLine(ostream& out) const {
  	out << "\n"; 
- }
+}
+
+
 /*
 template <typename T>
 void image<T>::writeHeader(ostream& out) const {
