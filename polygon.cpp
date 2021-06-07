@@ -160,7 +160,7 @@ void Polygon::validate(){
         }
     } catch (const std::domain_error& err2) {
         this->setColor(color(0));
-        std::cerr << err2.what() << std::endl;
+        std::cout << err2.what() << std::endl;
     }
 
     // Test ellipse divide zero
@@ -179,7 +179,7 @@ void Polygon::validate(){
         theVerts.push_back(v3);
 
         this->setColor(color(255, 0, 0));
-        std::cerr << err1.what() << std::endl;
+        std::cout << err1.what() << std::endl;
     }
 	
 }

@@ -42,7 +42,7 @@ class ellipse : public shape {
             throw std::domain_error("ellipse center less zero");
     } catch (const std::domain_error& err2) {
         this->setColor(color(0));
-        std::cerr << err2.what() << std::endl;
+        std::cout << err2.what() << std::endl;
     }
 
     // Test ellipse divide zero
@@ -54,7 +54,7 @@ class ellipse : public shape {
         if (radii.x() == 0) radii.setX(2);
         if (radii.y() == 0) radii.setY(2);
         this->setColor(color(255, 0, 0));
-        std::cerr << err1.what() << std::endl;
+        std::cout << err1.what() << std::endl;
     }
     
 }
