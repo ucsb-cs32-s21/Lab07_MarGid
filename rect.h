@@ -39,7 +39,39 @@ class Rect : public shape {
 	void setRCorner(vec2 inRCor) {lowerR = inRCor;}
 
 	void validate(){
-		
+        // Check if any vertex is less than 0
+        try {
+            if (upperL.x() < 0 || upperL.y() < 0 || lowerR.x() < 0 || lowerR.y() < 0)
+                throw std::domain_error("rect vert less zero");
+        } catch (const std::domain_error& err2) {
+            this->setColor(color(0));
+            std::cerr << err2.what() << std::endl;
+        }
+
+        // Check vertex order
+        try {
+            if (upperL.y() > lowerR.y() || upperL.x() > lowerR.x())
+                throw std::domain_error("rect order incorrect");
+        } catch (const std::domain_error& err2) {
+            // reversed corners
+            if (upperL.y() > lowerR.y() && upperL.x() > lowerR.x())
+                std::swap<vec2>(upperL, lowerR);
+            // inverted corners (horizontal)
+            else if (upperL.x() > lowerR.x()) {
+                int L = lowerR.x();
+                lowerR.setX(upperL.x());
+                upperL.setX(L);
+            }
+            // inverted corners (vertical)
+            else if (upperL.y() > lowerR.y()) {
+                int U = lowerR.y();
+                lowerR.setY(upperL.y());
+                upperL.setY(U);
+            }
+
+            this->setColor(color(255, 0, 0));
+            std::cerr << err2.what() << std::endl;
+        }
 	}
 
   private:

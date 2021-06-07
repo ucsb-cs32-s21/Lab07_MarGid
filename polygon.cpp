@@ -152,7 +152,34 @@ bool Polygon::concave() {
 }
 
 void Polygon::validate(){
+    // Check if any vertices are less than 0
+    try {
+        for (vec2 vert : theVerts) {
+            if (vert.x() < 0 || vert.y() < 0)
+                throw std::domain_error("polygon vert less zero");
+        }
+    } catch (const std::domain_error& err2) {
+        this->setColor(color(0));
+        std::cerr << err2.what() << std::endl;
+    }
 
+    // Test ellipse divide zero
+    try {
+        if (this->concave())
+            throw std::underflow_error("polygon concave");
 
+    } catch (const std::underflow_error& err1) {
+        vec2 v1 = theVerts[0];
+        vec2 v2 = theVerts[1];
+        vec2 v3 = theVerts[theVerts.size() - 1];
+
+        theVerts.clear();
+        theVerts.push_back(v1);
+        theVerts.push_back(v2);
+        theVerts.push_back(v3);
+
+        this->setColor(color(255, 0, 0));
+        std::cerr << err1.what() << std::endl;
+    }
 	
 }
