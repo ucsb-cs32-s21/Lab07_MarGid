@@ -1,6 +1,4 @@
-//Zack Marks and Anand Giduthuri
-//CS32 S21		Prof. Wood
-//Lab07
+/* ZJW simple C++ code to write out a PPM file representing an ellipse(s) */
 
 #include <iostream>
 #include <fstream>
@@ -79,7 +77,7 @@ int main(int argc, char *argv[]) {
 
 	sizeX = stoi(argv[1]);
 	sizeY = stoi(argv[2]);
-	image<color> theImage(sizeX, sizeY, background);
+	image theImage(sizeX, sizeY, background);
 
 
 
