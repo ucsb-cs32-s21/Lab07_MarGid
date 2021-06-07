@@ -35,13 +35,9 @@ class ellipse : public shape {
 
 	void setCenter(vec2 inCenter) { center = inCenter; }
 
-	/*std::ostream& operator<<(std::ostream &out) {
-		out << "an ellipse\n";
-		return out;
-	}*/
+	friend std::ostream& operator<<(std::ostream &out, const shape &theEllipse);
+
 	void validate();
-
-
 
   private:
 	vec2 center; //center point of ellipse

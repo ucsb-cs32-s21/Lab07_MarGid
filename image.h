@@ -65,19 +65,19 @@ void image<color>::writePixel(ostream& out, int x, int y, color cOut) const{
 //ascii version 
 template<>
 void image<char>::writePixel(ostream& out, int x, int y, char cOut) const{
- 	out << cOut << endl;
+ 	out << cOut << " ";
 }
 
 //greyscale / int version
 template<>
 void image<int>::writePixel(ostream& out, int x, int y, int cOut) const{
- 	out << static_cast<int>(clamp(cOut, 0.0, 255)) << endl;
+ 	out << static_cast<int>(clamp(cOut, 0.0, 255)) << " ";
 }
 
 //black and white / bool version 
 template<>
 void image<bool>::writePixel(ostream& out, int x, int y, bool cOut) const{
- 	out << cOut << endl;
+ 	out << cOut << " ";
 }
 
 

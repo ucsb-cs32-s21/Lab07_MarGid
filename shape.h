@@ -19,8 +19,8 @@ class shape {
 	void setDepth(double inD) { depth= inD; }
 	void setColor(color col) { inC = col; }
 
-	virtual bool eval(double x, double y) = 0; //pure virtual
-	virtual void validate() = 0;
+	virtual bool eval(double x, double y) = 0; // pure virtual
+	virtual void validate() = 0; // pure virtual
 
   protected:
 	color inC;

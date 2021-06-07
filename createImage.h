@@ -99,9 +99,8 @@ void createImage(image<char>& theImg,
 				}
 			}
 					
-			if (inTrue) {
-				cout << inC;			
-				//theImg.setPixel(x, y, inC);
+			if (inTrue) {			
+				theImg.setPixel(x, y, inC);
 			}
 		}
 	}
