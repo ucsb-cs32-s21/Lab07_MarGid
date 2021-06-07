@@ -1,6 +1,4 @@
-//Zack Marks and Anand Giduthuri
-//CS32 S21		Prof. Wood
-//Lab07
+/* ZJW simple C++ code to write out a PPM file representing an ellipse(s) */
 
 #include <iostream>
 #include <fstream>
@@ -67,8 +65,7 @@ int main(int argc, char *argv[]) {
 
 	ofstream outFile;
 	int sizeX, sizeY;
-	//color background(112, 134, 156);
-	int background = 112;
+	color background(112, 134, 156);
 
 	vector<shared_ptr<shape>> theShapes;
 
@@ -80,8 +77,7 @@ int main(int argc, char *argv[]) {
 
 	sizeX = stoi(argv[1]);
 	sizeY = stoi(argv[2]);
-	//change here
-	image<int> theImage(sizeX, sizeY, '.');
+	image theImage(sizeX, sizeY, background);
 
 
 
@@ -99,20 +95,23 @@ int main(int argc, char *argv[]) {
 				nicerRand(18, 43), nicerRand(15, 36), color(nicerRand(123, 250), 12, 112), nicerRand(1, 20)));
 	}
 
+	for (int i=0; i < 1; i++) {
 		//code to write the files
 		outFilename.append(argv[3]);
+		if (i < 10)
+		  	outFilename.append(to_string(0));
+		outFilename.append(to_string(i));
 		outFilename.append(".ppm");
 		outFile.open(outFilename);
 
 		//create the image
-		//change here
-		createImage(theImage, theShapes, '1');
+		createImage(theImage, theShapes, color(12));
 
 		cout << "writing an image of size: " << sizeX << " " << sizeY << " to: " << argv[3] << endl;
 		theImage.fullWriteOut(outFile);
 		outFile.close();
 		outFilename.erase();
 
-	//end animation loop
+	}//end animation loop
 
 }
