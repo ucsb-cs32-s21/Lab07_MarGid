@@ -77,7 +77,7 @@ int main(int argc, char *argv[]) {
 
 	sizeX = stoi(argv[1]);
 	sizeY = stoi(argv[2]);
-	image theImage(sizeX, sizeY, background);
+	image<color> theImage(sizeX, sizeY, background);
 
 
 
